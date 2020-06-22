@@ -72,8 +72,8 @@ cards = [card_one, card_two, card_three]
 # print(by_name[0]);
 # print(by_lastname[0]);    
 # print(by_mail[0]);    
-cards = create_contacts(2,10) 
-print(cards)
-for i,j in enumerate(cards):
-    print(cards[i].contact())
+# cards = create_contacts(2,10) 
+# print(cards)
+# for i,j in enumerate(cards):
+#     print(cards[i].contact())
 
