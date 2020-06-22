@@ -50,15 +50,10 @@ def create_contacts(card_type, amount):
     amount - number of cards to create
     and return a list of created cards
     '''
-    cards = []
     if card_type == 0:
-        # for i in range(amount):
-        #    cards += BusinessContact(fake.company(), fake.job(), fake.phone_number(),fake.first_name() ,fake.last_name(), fake.phone_number(), fake.email()) 
-        cards = [BusinessContact(fake.company(), fake.job(), fake.phone_number(),fake.first_name() ,fake.last_name(), fake.phone_number(), fake.email()) for i in range(amount)]
-    else:
-        pass #BaseContact
-
-    return cards 
+        return [BusinessContact(fake.company(), fake.job(), fake.phone_number(),fake.first_name(),fake.last_name(), 
+        fake.phone_number(), fake.email()) for i in range(amount)]
+    return [BaseContact(fake.first_name(), fake.last_name(), fake.phone_number(), fake.email()) for i in range(amount)]
 # for i in range(5):
 #     ob = "ob"+str(i)
 #     ob = NewPostcard(fake.first_name() ,fake.last_name(), fake.company(), fake.job(), fake.email());
@@ -66,7 +61,7 @@ def create_contacts(card_type, amount):
     #print(ob)
 
 card_one = BaseContact(fake.first_name() ,fake.last_name(), fake.phone_number(), fake.email());
-card_two = BusinessContact(fake.company(), fake.job(), fake.phone_number(),fake.first_name() ,fake.last_name(), fake.phone_number(), fake.email(),);
+card_two = BusinessContact(fake.company(), fake.job(), fake.phone_number(),fake.first_name() ,fake.last_name(), fake.phone_number(), fake.email());
 card_three = BaseContact(fake.first_name() ,fake.last_name(), fake.phone_number(), fake.email());
 cards = [card_one, card_two, card_three]
 
@@ -77,5 +72,8 @@ cards = [card_one, card_two, card_three]
 # print(by_name[0]);
 # print(by_lastname[0]);    
 # print(by_mail[0]);    
-card_one = create_contacts(0,4) 
-print(card_one)
+cards = create_contacts(2,10) 
+print(cards)
+for i,j in enumerate(cards):
+    print(cards[i].contact())
+
